@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cmu.dataserver.app" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.cmu.dataserver.app.DataService"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cmu.dataserver.entities.doctor.DoctorInterface"
+            android:label="@string/title_activity_doctor_interface" >
+        </activity>
+        <activity
+            android:name="com.cmu.dataserver.entities.patient.PatientInterface"
+            android:label="@string/title_activity_patient_interface" >
+        </activity>
+        <activity
+            android:name="com.cmu.dataserver.entities.appointment.AppointmentInterface"
+            android:label="@string/title_activity_appointment_interface" >
+        </activity>
+    </application>
+
+</manifest>
