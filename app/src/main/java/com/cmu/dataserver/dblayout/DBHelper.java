@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.cmu.dataserver.entities.appointment.Appointment;
+import com.cmu.dataserver.entities.patient.Patient;
+import com.cmu.dataserver.entities.patient.PatientInterface;
+
 /**
  * Created by SafenZhai on 4/13/14.
  */
@@ -45,12 +49,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE doctor (DocID INTEGER PRIMARY KEY, DepID INTEGER, " +
                 "DocName VARCHAR, DocPhone VARCHAR, DocSpeciality VARCHAR)");
         db.execSQL("CREATE TABLE patient (PatID INTEGER PRIMARY KEY, PatPsw INTEGER, " +
-                "PatName VARCHAR, PatAge INTEGER, PatGender VARCHAR, PatInsurance VARCHAR)");
+                "PatName VARCHAR, PatAge VARCHAR, PatGender VARCHAR, PatInsurance VARCHAR)");
         db.execSQL("CREATE TABLE appointment (AppID INTEGER PRIMARY KEY, DocID INTEGER, PatID INTEGER" +
                 "AppDate VARCHAR, AppTime VARCHAR, AppAvailability INTEGER)");
         db.execSQL("CREATE TABLE document (DocuID INTEGER PRIMARY KEY, AppID INTEGER, " +
                 "DocuContent VARCHAR )");
-
 
     }
 

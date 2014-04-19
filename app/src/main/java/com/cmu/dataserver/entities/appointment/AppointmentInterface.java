@@ -1,6 +1,7 @@
 package com.cmu.dataserver.entities.appointment;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,41 +14,22 @@ import com.cmu.dataserver.entities.patient.Patient;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppointmentInterface extends ActionBarActivity {
+public class AppointmentInterface  {
 
     DBHelper dbHelper;
 
+    private Context mContext;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment_interface);
+    public AppointmentInterface(Context context){
+        mContext = context;
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.appointment_interface, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     public void insertApp(Appointment a) {
 
-        dbHelper = new DBHelper(this);
+        dbHelper = new DBHelper(mContext);
 
         ContentValues values = new ContentValues();
         values.put("AppID", a.getAppID());
@@ -63,15 +45,15 @@ public class AppointmentInterface extends ActionBarActivity {
 
     public void deleteApp(String AppID){
 
-        dbHelper = new DBHelper(this);
-        dbHelper.delete("appointment","where AppID = ?", new String[]{AppID});
+        dbHelper = new DBHelper(mContext);
+        dbHelper.delete("appointment","AppID = ?", new String[]{AppID});
 
     }
 
 
     public void updateApp(Appointment a){
 
-        dbHelper = new DBHelper(this);
+        dbHelper = new DBHelper(mContext);
 
         ContentValues values = new ContentValues();
         values.put("AppID", a.getAppID());
@@ -81,14 +63,14 @@ public class AppointmentInterface extends ActionBarActivity {
         values.put("AppTime", a.getAppTime());
         values.put("AppAvailability", a.getAppAvailability());
 
-        dbHelper.update(values,"appointment","where AppID = ?", new String[]{Integer.toString(a.getAppID())});
+        dbHelper.update(values,"appointment","AppID = ?", new String[]{Integer.toString(a.getAppID())});
 
     }
 
 
 
     public List<Appointment> getAppList() {
-        dbHelper = new DBHelper(this);
+        dbHelper = new DBHelper(mContext);
         List<Appointment> appList = new ArrayList<Appointment>();
 
 

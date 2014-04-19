@@ -11,7 +11,7 @@ public class Patient {
     private int PatID;
     private String PatPsw;
     private String PatName;
-    private int PatAge;
+    private String PatAge;
     private String PatGender;
     private String PatInsurance;
 
@@ -40,11 +40,11 @@ public class Patient {
         PatName = patName;
     }
 
-    public int getPatAge() {
+    public String getPatAge() {
         return PatAge;
     }
 
-    public void setPatAge(int patAge) {
+    public void setPatAge(String patAge) {
         PatAge = patAge;
     }
 

@@ -1,6 +1,7 @@
 package com.cmu.dataserver.entities.doctor;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,41 +13,19 @@ import com.cmu.dataserver.dblayout.DBHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoctorInterface extends ActionBarActivity {
+public class DoctorInterface {
     DBHelper dbHelper;
 
+    private Context mContext;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_interface);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.doctor_interface, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public DoctorInterface(Context context){
+        mContext = context;
     }
 
 
     public void insertDoctor(Doctor d){
 
-        dbHelper = new DBHelper(this);
+        dbHelper = new DBHelper(mContext);
 
         ContentValues values = new ContentValues();
         values.put("DocID", d.getDocID());
@@ -61,13 +40,13 @@ public class DoctorInterface extends ActionBarActivity {
 
     public void deleteDoctor(String DocID){
 
-        dbHelper = new DBHelper(this);
-        dbHelper.delete("doctor","where DocID = ?", new String[]{DocID});
+        dbHelper = new DBHelper(mContext);
+        dbHelper.delete("doctor","DocID = ?", new String[]{DocID});
     }
 
     public void updateDoctor(Doctor d){
 
-        dbHelper = new DBHelper(this);
+        dbHelper = new DBHelper(mContext);
 
         ContentValues values = new ContentValues();
         values.put("DocID", d.getDocID());
@@ -76,7 +55,7 @@ public class DoctorInterface extends ActionBarActivity {
         values.put("DocPhone", d.getDocPhone());
         values.put("DocSpeciality", d.getDocSpeciality());
 
-        dbHelper.update(values,"doctor","where DocID = ?", new String[]{Integer.toString(d.getDocID())});
+        dbHelper.update(values,"doctor","DocID = ?", new String[]{Integer.toString(d.getDocID())});
 
     }
 
@@ -89,7 +68,7 @@ public class DoctorInterface extends ActionBarActivity {
     private String DocSpeciality;
 */
 
-        dbHelper = new DBHelper(this);
+        dbHelper = new DBHelper(mContext);
         List<Doctor> doctorList = new ArrayList<Doctor>();
 
         Cursor c = dbHelper.query("doctor");

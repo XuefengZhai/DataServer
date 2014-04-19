@@ -4,10 +4,16 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.cmu.dataserver.dblayout.DBHelper;
+import com.cmu.dataserver.entities.patient.Patient;
+import com.cmu.dataserver.entities.patient.PatientInterface;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DataService extends ActionBarActivity {
@@ -24,6 +30,96 @@ public class DataService extends ActionBarActivity {
         SQLiteDatabase db = openOrCreateDatabase("database.db", Context.MODE_PRIVATE, null);
 
         dbHelper = new DBHelper(this);
+        dbHelper.onCreate(db);
+
+        //Dummy Data here
+
+        Patient p = new Patient();
+        p.setPatID(3344);
+        p.setPatInsurance("12345");
+        p.setPatGender("Male");
+        p.setPatAge("34");
+        p.setPatName("David");
+        p.setPatPsw("1234");
+
+        PatientInterface PI = new PatientInterface(this);
+
+        PI.insertPatient(p);
+
+        p.setPatID(5566);
+        p.setPatInsurance("12345");
+        p.setPatGender("Male");
+        p.setPatAge("34");
+        p.setPatName("David");
+        p.setPatPsw("1234");
+
+        PI.insertPatient(p);
+
+
+
+        List<Patient> PA = new ArrayList<Patient>();
+        PA = PI.getPatientList();
+
+
+        for(Patient ptest: PA){
+        Log.i("",ptest.getPatName());
+        Log.i("",ptest.getPatAge());
+        Log.i("",ptest.getPatGender());
+        Log.i("",ptest.getPatInsurance());
+        Log.i("",ptest.getPatPsw());
+        Log.i("", Integer.toString(ptest.getPatID()));}
+
+        PI.deletePatient("3344");
+
+
+        PA = PI.getPatientList();
+
+
+        for(Patient ptest: PA){
+            Log.i("",ptest.getPatName());
+            Log.i("",ptest.getPatAge());
+            Log.i("",ptest.getPatGender());
+            Log.i("",ptest.getPatInsurance());
+            Log.i("",ptest.getPatPsw());
+            Log.i("", Integer.toString(ptest.getPatID()));}
+
+
+
+        p.setPatID(5566);
+        p.setPatInsurance("9999");
+        p.setPatGender("Mal999e");
+        p.setPatAge("39994");
+        p.setPatName("D999avid");
+        p.setPatPsw("1299934");
+
+        PI.updatePatient(p);
+
+        PA = PI.getPatientList();
+
+        for(Patient ptest: PA){
+            Log.i("",ptest.getPatName());
+            Log.i("",ptest.getPatAge());
+            Log.i("",ptest.getPatGender());
+            Log.i("",ptest.getPatInsurance());
+            Log.i("",ptest.getPatPsw());
+            Log.i("", Integer.toString(ptest.getPatID()));}
+
+
+
+        db.close();
+        dbHelper.close();
+
+        /*
+        ptest = PA.get(0);
+
+        Log.i("",ptest.getPatName());
+        Log.i("",ptest.getPatAge());
+        Log.i("",ptest.getPatGender());
+        Log.i("",ptest.getPatInsurance());
+        Log.i("",ptest.getPatPsw());
+        Log.i("", Integer.toString(ptest.getPatID()));
+        */
+
 
         /*
         this.hos_init();
@@ -154,5 +250,8 @@ public class DataService extends ActionBarActivity {
 
     }
 */
+
+
+
 
 }
