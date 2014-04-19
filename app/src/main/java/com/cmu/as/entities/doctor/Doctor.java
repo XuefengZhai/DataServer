@@ -1,4 +1,4 @@
-package com.cmu.dataserver.entities.doctor;
+package com.cmu.as.entities.doctor;
 
 /**
  * Created by SafenZhai on 4/14/14.

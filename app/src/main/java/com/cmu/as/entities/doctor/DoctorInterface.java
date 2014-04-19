@@ -1,14 +1,10 @@
-package com.cmu.dataserver.entities.doctor;
+package com.cmu.as.entities.doctor;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import com.cmu.dataserver.app.R;
-import com.cmu.dataserver.dblayout.DBHelper;
+
+import com.cmu.as.dblayout.DBHelper;
 
 import java.util.ArrayList;
 import java.util.List;

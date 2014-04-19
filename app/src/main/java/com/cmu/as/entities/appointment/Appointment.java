@@ -1,4 +1,4 @@
-package com.cmu.dataserver.entities.appointment;
+package com.cmu.as.entities.appointment;
 
 /**
  * Created by SafenZhai on 4/14/14.

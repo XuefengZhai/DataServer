@@ -1,4 +1,4 @@
-package com.cmu.dataserver.dblayout;
+package com.cmu.as.dblayout;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,10 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.cmu.dataserver.entities.appointment.Appointment;
-import com.cmu.dataserver.entities.patient.Patient;
-import com.cmu.dataserver.entities.patient.PatientInterface;
 
 /**
  * Created by SafenZhai on 4/13/14.

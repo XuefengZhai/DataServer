@@ -1,4 +1,4 @@
-package com.cmu.dataserver.app;
+package com.cmu.as.app;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,17 +8,19 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.cmu.dataserver.dblayout.DBHelper;
-import com.cmu.dataserver.entities.patient.Patient;
-import com.cmu.dataserver.entities.patient.PatientInterface;
+import com.cmu.as.dblayout.DBHelper;
+import com.cmu.as.entities.patient.Patient;
+import com.cmu.as.entities.patient.PatientInterface;
+import com.cmu.as.socket.ServerThread;
+import com.cmu.dataserver.app.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class DataService extends ActionBarActivity {
 
     DBHelper dbHelper;
+
 
 
 
@@ -57,7 +59,7 @@ public class DataService extends ActionBarActivity {
 
 
 
-        List<Patient> PA = new ArrayList<Patient>();
+        List<Patient> PA;
         PA = PI.getPatientList();
 
 
@@ -104,7 +106,7 @@ public class DataService extends ActionBarActivity {
             Log.i("",ptest.getPatPsw());
             Log.i("", Integer.toString(ptest.getPatID()));}
 
-
+        new ServerThread().start();
 
         db.close();
         dbHelper.close();
@@ -138,8 +140,11 @@ public class DataService extends ActionBarActivity {
 
         */
 
-        db.close();
     }
+
+
+
+
 
 
     @Override

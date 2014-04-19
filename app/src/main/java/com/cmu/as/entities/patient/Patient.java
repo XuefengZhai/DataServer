@@ -1,13 +1,16 @@
-package com.cmu.dataserver.entities.patient;
+package com.cmu.as.entities.patient;
+
+import java.io.Serializable;
 
 /**
  * Created by SafenZhai on 4/14/14.
  */
-public class Patient {
+public class Patient implements Serializable{
 
     //        db.execSQL("CREATE TABLE patient (PatID INTEGER PRIMARY KEY, PatPsw INTEGER, " +
     //    "PatName VARCHAR, PatAge INTEGER, PatGender VARCHAR, PatInsurance VARCHAR)");
 
+    private static final long serialVersionUID = 1L;
     private int PatID;
     private String PatPsw;
     private String PatName;
