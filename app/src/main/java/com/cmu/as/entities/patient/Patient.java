@@ -11,22 +11,23 @@ public class Patient implements Serializable{
     //    "PatName VARCHAR, PatAge INTEGER, PatGender VARCHAR, PatInsurance VARCHAR)");
 
     private static final long serialVersionUID = 1L;
-    private int PatID;
-    private String PatPsw;
+    private String PatID;
+   // private String PatPsw;
     private String PatName;
     private String PatAge;
     private String PatGender;
     private String PatInsurance;
 
 
-    public int getPatID() {
+    public String getPatID() {
         return PatID;
     }
 
-    public void setPatID(int patID) {
+    public void setPatID(String patID) {
         PatID = patID;
     }
 
+    /*
     public String getPatPsw() {
         return PatPsw;
     }
@@ -34,6 +35,7 @@ public class Patient implements Serializable{
     public void setPatPsw(String patPsw) {
         PatPsw = patPsw;
     }
+    */
 
     public String getPatName() {
         return PatName;

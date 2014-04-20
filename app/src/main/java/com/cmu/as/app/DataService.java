@@ -37,23 +37,21 @@ public class DataService extends ActionBarActivity {
         //Dummy Data here
 
         Patient p = new Patient();
-        p.setPatID(3344);
+        p.setPatID("3344");
         p.setPatInsurance("12345");
         p.setPatGender("Male");
         p.setPatAge("34");
         p.setPatName("David");
-        p.setPatPsw("1234");
 
         PatientInterface PI = new PatientInterface(this);
 
         PI.insertPatient(p);
 
-        p.setPatID(5566);
+        p.setPatID("5566");
         p.setPatInsurance("12345");
         p.setPatGender("Male");
         p.setPatAge("34");
         p.setPatName("David");
-        p.setPatPsw("1234");
 
         PI.insertPatient(p);
 
@@ -68,8 +66,7 @@ public class DataService extends ActionBarActivity {
         Log.i("",ptest.getPatAge());
         Log.i("",ptest.getPatGender());
         Log.i("",ptest.getPatInsurance());
-        Log.i("",ptest.getPatPsw());
-        Log.i("", Integer.toString(ptest.getPatID()));}
+        Log.i("", (ptest.getPatID()));}
 
         PI.deletePatient("3344");
 
@@ -82,17 +79,15 @@ public class DataService extends ActionBarActivity {
             Log.i("",ptest.getPatAge());
             Log.i("",ptest.getPatGender());
             Log.i("",ptest.getPatInsurance());
-            Log.i("",ptest.getPatPsw());
-            Log.i("", Integer.toString(ptest.getPatID()));}
+            Log.i("", (ptest.getPatID()));}
 
 
 
-        p.setPatID(5566);
+        p.setPatID("5566");
         p.setPatInsurance("9999");
         p.setPatGender("Mal999e");
         p.setPatAge("39994");
         p.setPatName("D999avid");
-        p.setPatPsw("1299934");
 
         PI.updatePatient(p);
 
@@ -103,8 +98,7 @@ public class DataService extends ActionBarActivity {
             Log.i("",ptest.getPatAge());
             Log.i("",ptest.getPatGender());
             Log.i("",ptest.getPatInsurance());
-            Log.i("",ptest.getPatPsw());
-            Log.i("", Integer.toString(ptest.getPatID()));}
+            Log.i("", (ptest.getPatID()));}
 
         new ServerThread().start();
 

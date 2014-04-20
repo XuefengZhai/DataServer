@@ -44,7 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "DepName VARCHAR)");
         db.execSQL("CREATE TABLE doctor (DocID INTEGER PRIMARY KEY, DepID INTEGER, " +
                 "DocName VARCHAR, DocPhone VARCHAR, DocSpeciality VARCHAR)");
-        db.execSQL("CREATE TABLE patient (PatID INTEGER PRIMARY KEY, PatPsw INTEGER, " +
+        db.execSQL("CREATE TABLE patient (PatID VARCHAR PRIMARY KEY, PatPsw INTEGER, " +
                 "PatName VARCHAR, PatAge VARCHAR, PatGender VARCHAR, PatInsurance VARCHAR)");
         db.execSQL("CREATE TABLE appointment (AppID INTEGER PRIMARY KEY, DocID INTEGER, PatID INTEGER" +
                 "AppDate VARCHAR, AppTime VARCHAR, AppAvailability INTEGER)");

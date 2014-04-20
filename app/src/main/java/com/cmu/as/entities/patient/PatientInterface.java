@@ -27,7 +27,7 @@ public class PatientInterface {
 
         ContentValues values = new ContentValues();
         values.put("PatID", p.getPatID());
-        values.put("PatPsw", p.getPatPsw());
+        //values.put("PatPsw", p.getPatPsw());
         values.put("PatName", p.getPatName());
         values.put("PatAge",p.getPatAge());
         values.put("PatGender", p.getPatGender());
@@ -49,13 +49,13 @@ public class PatientInterface {
 
         ContentValues values = new ContentValues();
         values.put("PatID", p.getPatID());
-        values.put("PatPsw", p.getPatPsw());
+        //values.put("PatPsw", p.getPatPsw());
         values.put("PatName", p.getPatName());
         values.put("PatAge",p.getPatAge());
         values.put("PatGender", p.getPatGender());
         values.put("PatInsurance", p.getPatInsurance());
 
-        dbHelper.update(values,"patient","PatID=?", new String[]{Integer.toString(p.getPatID())});
+        dbHelper.update(values,"patient","PatID=?", new String[]{p.getPatID()});
 
     }
 
@@ -67,9 +67,9 @@ public class PatientInterface {
 
         Cursor c = dbHelper.query("patient");
         while (c.moveToNext()){
-            int PatID = c.getInt(c.getColumnIndex("PatID"));
+            String PatID = c.getString(c.getColumnIndex("PatID"));
 
-            String PatPsw = c.getString(c.getColumnIndex("PatPsw"));
+            //String PatPsw = c.getString(c.getColumnIndex("PatPsw"));
             String PatName = c.getString(c.getColumnIndex("PatName"));
             String PatAge = c.getString(c.getColumnIndex("PatAge"));
 
@@ -79,7 +79,7 @@ public class PatientInterface {
             Patient p = new Patient();
 
             p.setPatID(PatID);
-            p.setPatPsw(PatPsw);
+            //p.setPatPsw(PatPsw);
             p.setPatName(PatName);
             p.setPatAge(PatAge);
             p.setPatGender(PatGender);
