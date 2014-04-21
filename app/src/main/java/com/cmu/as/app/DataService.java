@@ -14,6 +14,10 @@ import com.cmu.as.entities.patient.PatientInterface;
 import com.cmu.as.socket.ServerThread;
 import com.cmu.dataserver.app.R;
 
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 import java.util.List;
 
 
@@ -28,6 +32,23 @@ public class DataService extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_service);
+
+
+
+            try {
+                for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+                    NetworkInterface intf = en.nextElement();
+                    for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+                        InetAddress inetAddress = enumIpAddr.nextElement();
+                        if (!inetAddress.isLoopbackAddress()) {
+                            Log.i("IP:",inetAddress.getHostAddress().toString()) ;
+                        }
+                    }
+                }
+            } catch (SocketException ex) {
+                Log.e("IP:", ex.toString());
+            }
+
 
         SQLiteDatabase db = openOrCreateDatabase("database.db", Context.MODE_PRIVATE, null);
 
