@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="app/build/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="app/build/source/r/debug"/>
+	<classpathentry kind="src" path="app/src/main/java"/>
+	<classpathentry kind="lib" path="app/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/classes.jar"/>
+	<classpathentry kind="lib" path="app/build/pre-dexed/debug/classes-b94cac8264a0735c99b715e6031384efdacb9b98.jar"/>
+	<classpathentry kind="lib" path="app/build/pre-dexed/debug/support-v4-19.0.1-3bf117e59e2e0f41bbf9219f2be90cdcf1dd583d.jar"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="app/build/classes/debug"/>
+</classpath>

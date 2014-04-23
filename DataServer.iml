@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/app/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/classes.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/app/build/pre-dexed/debug/classes-b94cac8264a0735c99b715e6031384efdacb9b98.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-3bf117e59e2e0f41bbf9219f2be90cdcf1dd583d.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/gradle/wrapper/gradle-wrapper.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/app/build/source/buildConfig/debug" expected_position="0" />
+      <src_folder value="file://$MODULE_DIR$/app/build/source/r/debug" expected_position="1" />
+      <src_folder value="file://$MODULE_DIR$/app/src/main/java" expected_position="2" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/app/build/classes/debug" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/app/build/source/buildConfig/debug" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/build/source/r/debug" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="classes.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/app/build/exploded-aar/com.android.support/appcompat-v7/19.0.1/classes.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="classes-b94cac8264a0735c99b715e6031384efdacb9b98.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/app/build/pre-dexed/debug/classes-b94cac8264a0735c99b715e6031384efdacb9b98.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="support-v4-19.0.1-3bf117e59e2e0f41bbf9219f2be90cdcf1dd583d.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/app/build/pre-dexed/debug/support-v4-19.0.1-3bf117e59e2e0f41bbf9219f2be90cdcf1dd583d.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gradle-wrapper.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/gradle/wrapper/gradle-wrapper.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="inheritedJdk" />
   </component>
 </module>
 
